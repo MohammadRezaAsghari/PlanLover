@@ -86,7 +86,7 @@ ul.task {
 }
 
 ul.task li.task-item {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.05);
     border-radius: 7px;
     font-size: 1.5rem;
     padding: 1rem;
@@ -107,17 +107,17 @@ ul.task li.task-item {
     justify-content: center; */
 }
 
-#important:hover {
+#important .task-item:hover {
     border-width: 2px;
     border-color: var(--danger);
 }
 
-#urgent:hover {
+#urgent .task-item:hover {
     border-width: 2px;
     border-color: var(--warning);
 }
 
-#consider:hover {
+#consider .task-item:hover {
     border-width: 2px;
     border-color: var(--success);
 }
