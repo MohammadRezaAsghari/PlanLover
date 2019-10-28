@@ -12,6 +12,7 @@ cardHolder.addEventListener('click', function(e) {
             const li = document.createElement('li');
             //configure li
             li.textContent = e.target.parentNode.children[0].value;
+            e.target.parentNode.children[0].value = '';
             li.className = 'task-item';
 
             //create close btn
