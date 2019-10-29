@@ -14,7 +14,7 @@ let ulTaskArr = Array.from(ulTasks);
 cardHolder.addEventListener('click', function(e) {
     e.preventDefault();
 
-    if (e.target.className === 'btn commit') {
+    if (e.target.classList.contains('btn')) {
         if (e.target.parentNode.children[0].value !== '') {
             
             let cardId = e.target.parentNode.parentNode.parentNode.id;
@@ -24,7 +24,21 @@ cardHolder.addEventListener('click', function(e) {
         }
 
     }
+    // if(e.target.classList.contains('remove-item')){
+        
+        
+
+        
+        
+        
+        
+       
+        
+    // }
+
 });
+
+
 
 
 

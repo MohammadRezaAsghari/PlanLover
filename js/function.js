@@ -1,16 +1,22 @@
+//saveData 
+const saveDataInLocalStorage = function (name , todo){
+    localStorage.setItem(name , JSON.stringify(todo));
+}
 //function add data
 //input : todo title , todo category (id)
 //process : 1)push data into todo array + 
 //          2)save data immediately in local sotrage
 //output :---;
 let addData = function(title , id){
+    let keyID = uuidv4();
     todo.push({
+        key : keyID,
         id:id,
         title:title,
         body : ''
     })
 
-    localStorage.setItem('todos' , JSON.stringify(todo));
+    saveDataInLocalStorage('todos' , todo);
     
 };
 
@@ -28,12 +34,32 @@ let getLocalData = function () {
     }
 }
 
-//function renderTodos
+//removeTodo
+const removeTodo = function(title){
+    
+    let todoIndex = todo.findIndex(function (item) {
+        return item.title === title;
+    });
+    
+    if(todoIndex > -1){
+        todo.splice(todoIndex , 1);
+    }
+   
+    else{
+        console.log('item not find');
+    }
+    
+}
 
+//function renderTodos
+//input : todo array
+//process : put each todo array object on the related card
+//output: ---
 let renderTodos = function (todo) {
     const cards = document.querySelectorAll('.card');
     console.log(cards);
     cards.forEach(function (card) {
+        card.children[0].children[1].innerHTML ='';
         todo.forEach(function (td) {
             if(td.id === card.id){
                 //li
@@ -42,8 +68,17 @@ let renderTodos = function (todo) {
                 li.textContent = td.title;
                 //button
                 let btn = document.createElement('button');
-                btn.innerHTML = '&times;'
-                btn.className = 'remove-item';
+                btn.className = 'remove-item icon-x';
+                btn.addEventListener('click' , function(e){
+                    let targetTitle = e.target.parentNode.textContent;
+                    //1. remove the item from todo array
+                    removeTodo(targetTitle);
+                     //2. save the todo in localStorage again
+                    saveDataInLocalStorage('todos' , todo);
+                    //3. delete the item from the user interface
+                    renderTodos(todo);
+
+                })
 
                 li.appendChild(btn);
                 
@@ -56,7 +91,8 @@ let renderTodos = function (todo) {
 }
 
 //configureElement
-
+//input : event , card id
+//output :  ---
 let configureElement = function(e , cardID) {
    
     //crate li

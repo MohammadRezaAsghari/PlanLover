@@ -39,8 +39,8 @@ body {
 
 .nav-main {
     font-size: 20px;
-    margin-top: 2rem;
-    padding-left: 2rem;
+    /* margin-top: 2rem; */
+    /* padding-left: 2rem; */
 }
 
 .nav {
@@ -145,11 +145,17 @@ ul.task li.task-item {
     height: 40px;
     border-radius: 30px;
     flex: 1; 
+    font-size: 1.5rem;
+    text-indent: 1rem;
 }
 .form-commit .form-control::placeholder{
     font-size: 1.5rem;
     color: rgb(207, 207, 207);
     text-indent: 10px;
+}
+.form-commit .form-control:focus+.commit{
+    background-color: var(--primary);
+    color: #fff;
 }
 
 .form-commit .commit {
@@ -165,7 +171,29 @@ ul.task li.task-item {
     background-color: var(--primary);
     color: #fff;
 }
+.remove-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.remove-item::before{
+    
+    font-size: 1rem;
+    
 
+
+}
+.remove-item:hover{
+    background-color: var(--danger);
+    opacity: .8;
+    outline: none;
+}
+
+.remove-item:hover::before{
+    
+    color: #fff;
+    
+}
 
 
 /* scrollbar */
