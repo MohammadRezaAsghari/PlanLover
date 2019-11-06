@@ -3,6 +3,7 @@
 :root {
     --white-light: rgba(0, 0, 0, 0.05);
     --box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    --text-blak : rgba(0,0,0,0.65)
 }
 
 
@@ -47,6 +48,7 @@ body {
     height: 100vh;
     box-shadow: var(--box-shadow);
     background-color: #fff;
+    padding-right: 0px;
 }
 
 .main {
@@ -193,6 +195,34 @@ ul.task li.task-item {
     
     color: #fff;
     
+}
+
+.edit-todo{
+    display: flex;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* nav */
+ul.my-list{
+    list-style: none;
+    margin-top: 3rem;
+    width: 100%;
+}
+ul.my-list li{
+    font-size: 1.7rem;
+    padding:1rem;
+    padding-left: 6rem;
+    
+    color: var(--text-blak);
+}
+ul.my-list li:hover{
+    background-color: var(--white-light);
 }
 
 

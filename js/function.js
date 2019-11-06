@@ -35,6 +35,9 @@ let getLocalData = function () {
 }
 
 //removeTodo
+//input : get title of Item to be removed
+//process: find index in todo array and remove it
+//output: now one item has removed from todo array
 const removeTodo = function(title){
     
     let todoIndex = todo.findIndex(function (item) {
@@ -57,7 +60,6 @@ const removeTodo = function(title){
 //output: ---
 let renderTodos = function (todo) {
     const cards = document.querySelectorAll('.card');
-    console.log(cards);
     cards.forEach(function (card) {
         card.children[0].children[1].innerHTML ='';
         todo.forEach(function (td) {
@@ -68,7 +70,7 @@ let renderTodos = function (todo) {
                 li.textContent = td.title;
                 //button
                 let btn = document.createElement('button');
-                btn.className = 'remove-item icon-x';
+                btn.className = 'remove-item icon-trash';
                 btn.addEventListener('click' , function(e){
                     let targetTitle = e.target.parentNode.textContent;
                     //1. remove the item from todo array
@@ -78,9 +80,20 @@ let renderTodos = function (todo) {
                     //3. delete the item from the user interface
                     renderTodos(todo);
 
-                })
+                });
+                
+                //make a div
+                let div = document.createElement('div');
+                div.className = 'ml-auto d-flex align-items-center'
+                //make a button for remove
+                let editEl = document.createElement('button');
+                editEl.className = 'edit-todo icon-pen-tool btn btn-light';
 
-                li.appendChild(btn);
+                //give 2 buttons a parent
+                div.appendChild(editEl);
+                div.appendChild(btn);
+
+                li.appendChild(div);
                 
                 card.children[0].children[1].appendChild(li);
                 
