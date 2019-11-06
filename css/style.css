@@ -28,6 +28,8 @@ html {
 
 body {
     background-color: var(--white-light);
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
 }
 
 .header {
@@ -116,9 +118,6 @@ ul.task li.task-item {
     border: none;
     outline: none;
     margin-left: auto;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
 }
 
 #important .task-item:hover ,
@@ -179,11 +178,9 @@ ul.task li.task-item {
     justify-content: center;
 }
 .remove-item::before{
-    
-    font-size: 1rem;
-    
 
-
+    font-size: 1.3rem;
+    font-family: icomoon;
 }
 .remove-item:hover{
     background-color: var(--danger);
@@ -206,6 +203,10 @@ ul.task li.task-item {
     text-align: center;
     margin-right: 5px;
     background-color: rgba(0, 0, 0, 0.1);
+    font-size: 1.3rem;
+}
+.edit-todo::before{
+    font-family: icomoon;
 }
 
 /* nav */
@@ -215,11 +216,16 @@ ul.my-list{
     width: 100%;
 }
 ul.my-list li{
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     padding:1rem;
     padding-left: 6rem;
     
     color: var(--text-blak);
+}
+ul.my-list li::before{
+    color: rgba(0,0,0,0.7);
+    padding-right: 1rem;
+    font-family: icomoon;
 }
 ul.my-list li:hover{
     background-color: var(--white-light);
