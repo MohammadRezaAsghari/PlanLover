@@ -83,12 +83,14 @@ let renderTodos = function (todo) {
                 });
                 
                 //make a div
+                
                 let div = document.createElement('div');
-                div.className = 'ml-auto d-flex align-items-center'
+                div.className = 'ml-auto d-flex align-items-center';
+                
                 //make a button for remove
                 let editEl = document.createElement('button');
                 editEl.className = 'edit-todo icon-pen-tool btn btn-light';
-
+                
                 //give 2 buttons a parent
                 div.appendChild(editEl);
                 div.appendChild(btn);
@@ -117,12 +119,20 @@ let configureElement = function(e , cardID) {
 
     //create close btn
     const btn = document.createElement('button');
-    //configure btn
-    btn.innerHTML = '&times;'
-    btn.className = 'remove-item';
+    btn.className = 'remove-item icon-trash';
 
+    let div = document.createElement('div');
+    div.className = 'ml-auto d-flex align-items-center';
+                
+    //make a button for remove
+    let editEl = document.createElement('button');
+    editEl.className = 'edit-todo icon-pen-tool btn btn-light';
+    
+
+    div.appendChild(editEl);
+    div.appendChild(btn);
     // append btn to li
-    li.appendChild(btn);
+    li.appendChild(div);
 
     console.log(ulTaskArr);
     let properUl = ulTaskArr.find(function(item) {

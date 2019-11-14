@@ -24,17 +24,18 @@ cardHolder.addEventListener('click', function(e) {
         }
 
     }
-    // if(e.target.classList.contains('remove-item')){
+    if(e.target.classList.contains('remove-item')){
         
-        
+    console.log(e.target.parentNode.parentNode.textContent);
 
-        
-        
-        
-        
-       
-        
-    // }
+    //1. delete from todo array
+    removeTodo(e.target.parentNode.parentNode.textContent);
+    //2. save todo array again
+    saveDataInLocalStorage('todos' , todo);
+    //3. re render the todos
+    renderTodos(todo);
+ 
+    }
 
 });
 

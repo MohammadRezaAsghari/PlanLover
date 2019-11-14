@@ -167,6 +167,7 @@ ul.task li.task-item {
     margin-left: 1rem;
     background-color: rgba(0, 0, 0, 0.1);
     transition: all .3s;
+    font-family: 'icomoon';
 }
 .form-commit .commit:hover{
     background-color: var(--primary);
