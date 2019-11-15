@@ -49,17 +49,32 @@ cardHolder.addEventListener('click', function(e) {
         } ,200);
 
         //Work on the logic
-
+        //1. prepare the edit form with correct data (title and body);
         const titleText = e.target.parentNode.parentNode.textContent;
         const editInput = document.getElementById('editTitle');
-        console.log(editInput);
         editInput.value = titleText;
         
-        
+        //Event Listeners for edit-form
+        document.querySelector('.edit-form').addEventListener('submit' , function(e){
+        e.preventDefault();
+            //1.get the data from edit form
+
+            //2.Updata todo array
+
+            //3.Render 
+        });
         
     }
 
 });
+
+// Event Listeners for edit-holder
+document.querySelector('.edit-holder').addEventListener('click' , function (e) {
+    if(e.target.classList.contains('edit-holder')){
+        e.target.style.display = 'none';
+    }
+});
+
 
 
 
