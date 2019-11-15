@@ -232,6 +232,40 @@ ul.my-list li:hover{
     background-color: var(--white-light);
 }
 
+/* edit holder design */
+.edit-holder{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    opacity: 0;
+    transition: all .5s;
+}
+.edit{
+    height: 500px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(.4);
+    border-radius: 10px;
+    transition: all .3s;
+    transition-timing-function: cubic-bezier(.17,.67,.84,1.26);
+}
+.edit-form input,
+.edit-form textarea{
+    font-size: 1.5rem;
+    padding: 2rem;
+}
+.edit-form textarea{
+    max-height: 200px;
+    min-height: 200px;
+    margin: 1rem 0;
+}
+
 
 /* scrollbar */
 /* width */

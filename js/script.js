@@ -36,6 +36,28 @@ cardHolder.addEventListener('click', function(e) {
     renderTodos(todo);
  
     }
+    if(e.target.classList.contains('edit-todo')){
+
+        //Work on the User Interface
+        const editHolder = document.querySelector('.edit-holder');
+        editHolder.style.display = 'block';
+        setTimeout(function() {
+            editHolder.style.opacity = '1';
+        } , 100);
+        setTimeout(function () {
+            editHolder.firstElementChild.style.transform = 'translate(-50%,-50%) scale(1)';
+        } ,200);
+
+        //Work on the logic
+
+        const titleText = e.target.parentNode.parentNode.textContent;
+        const editInput = document.getElementById('editTitle');
+        console.log(editInput);
+        editInput.value = titleText;
+        
+        
+        
+    }
 
 });
 
