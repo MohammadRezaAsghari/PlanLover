@@ -13,7 +13,7 @@ let addData = function(title , id){
         key : keyID,
         id:id,
         title:title,
-        body : ''
+        body : 'the body'
     })
 
     saveDataInLocalStorage('todos' , todo);
@@ -52,6 +52,18 @@ const removeTodo = function(title){
         console.log('item not find');
     }
     
+}
+
+//function: find todo 
+//input : title of todo
+//process : find proper todo object
+//output :return the proper todo object
+const findTodo = function (title){
+    const wantedTodo = todo.find(function (item) {
+        return item.title === title;
+    })
+    console.log(wantedTodo);
+    return wantedTodo;
 }
 
 //function renderTodos

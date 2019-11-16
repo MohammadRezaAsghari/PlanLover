@@ -50,18 +50,29 @@ cardHolder.addEventListener('click', function(e) {
 
         //Work on the logic
         //1. prepare the edit form with correct data (title and body);
+        //title
         const titleText = e.target.parentNode.parentNode.textContent;
         const editInput = document.getElementById('editTitle');
         editInput.value = titleText;
+        //body
+        let wantedTodo = findTodo(titleText);
+        const editBody = document.getElementById('editBody');
+        editBody.value = wantedTodo.body;
+        console.log(wantedTodo);
         
         //Event Listeners for edit-form
         document.querySelector('.edit-form').addEventListener('submit' , function(e){
         e.preventDefault();
-            //1.get the data from edit form
-
-            //2.Updata todo array
-
+            //1.put the new data in the proper todo
+            wantedTodo.title = editInput.value;
+            wantedTodo.body = editBody.value;
+            //2.save changed to do in localStorage
+            saveDataInLocalStorage('todos' , todo);
             //3.Render 
+            renderTodos(todo);
+
+            //solution change the findTodo function from find to find Index
+            // I mean find the proper index and change todo[index]
         });
         
     }
