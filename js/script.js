@@ -55,17 +55,21 @@ cardHolder.addEventListener('click', function(e) {
         const editInput = document.getElementById('editTitle');
         editInput.value = titleText;
         //body
-        let wantedTodo = findTodo(titleText);
+        debugger;
+        let wantedTodoindex = findTodoIndex(titleText);
+        debugger;
         const editBody = document.getElementById('editBody');
-        editBody.value = wantedTodo.body;
-        console.log(wantedTodo);
+        editBody.value = todo[wantedTodoindex].body;
+        
         
         //Event Listeners for edit-form
         document.querySelector('.edit-form').addEventListener('submit' , function(e){
         e.preventDefault();
             //1.put the new data in the proper todo
-            wantedTodo.title = editInput.value;
-            wantedTodo.body = editBody.value;
+            debugger;
+            todo[wantedTodoindex].title = editInput.value;
+            todo[wantedTodoindex].body = editBody.value;
+            debugger;
             //2.save changed to do in localStorage
             saveDataInLocalStorage('todos' , todo);
             //3.Render 

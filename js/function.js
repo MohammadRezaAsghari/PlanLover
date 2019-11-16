@@ -58,12 +58,12 @@ const removeTodo = function(title){
 //input : title of todo
 //process : find proper todo object
 //output :return the proper todo object
-const findTodo = function (title){
-    const wantedTodo = todo.find(function (item) {
+const findTodoIndex = function (title){
+    const wantedTodoIndex = todo.findIndex(function (item) {
         return item.title === title;
     })
-    console.log(wantedTodo);
-    return wantedTodo;
+    debugger;
+    return wantedTodoIndex;
 }
 
 //function renderTodos
